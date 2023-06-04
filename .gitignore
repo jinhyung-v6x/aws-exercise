@@ -1,0 +1,12 @@
+# nodejs
+node_modules
+jspm_packages
+npm-*.log*
+yarn-*.log*
+
+
+# Serverless and typescript
+.serverless/
+.build/
+.webpack/
+.requirements.zip
