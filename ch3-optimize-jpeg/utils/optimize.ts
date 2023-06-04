@@ -1,5 +1,6 @@
 import * as tar from "tar";
 import * as fs from "fs";
+import * as childProcess from "child_process";
 
 const JPEG_OPTIM_PATH = "/tmp/bin/jpegoptim";
 const JPEG_OPTIM_PACK_FILE = "jpegoptim.tar.gz";
@@ -22,4 +23,8 @@ export const unpackJpegOptim = async () => {
       )
       .on("error", reject);
   });
+};
+
+export const optimize = async (filePath: string) => {
+  childProcess.execSync(`${JPEG_OPTIM_PATH} -o -s -m80 ${filePath}`);
 };

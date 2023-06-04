@@ -7,9 +7,6 @@ const config: AWS = {
     name: "aws",
     runtime: "nodejs14.x",
     region: "ap-northeast-2",
-    // httpApi: {
-    //   metrics: true, // api gateway metrics
-    // },
   },
   functions: {
     optimizeAndUpload: {
@@ -24,7 +21,15 @@ const config: AWS = {
       ],
     },
   },
-  plugins: ["serverless-webpack"],
+  plugins: ["serverless-plugin-scripts", "serverless-webpack"],
+  custom: {
+    scripts: {
+      hooks: {
+        "webpack:package:packageModules":
+          "cp jpegoptim.tar.gz .webpack/service",
+      },
+    },
+  },
 };
 
 export = config;
