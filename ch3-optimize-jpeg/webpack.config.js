@@ -24,4 +24,5 @@ module.exports = {
     ],
   },
   stats: "normal",
+  externals: [/aws-sdk/],
 };

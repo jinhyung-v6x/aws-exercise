@@ -1,4 +1,7 @@
 import { AWS } from "@serverless/typescript";
+import resources from "./s3-cloudfront";
+
+const NOT_EXISTING_ENV = "NOT_EXISTING_ENV";
 
 const config: AWS = {
   service: "photo-optimizer-api",
@@ -19,6 +22,9 @@ const config: AWS = {
           },
         },
       ],
+      environment: {
+        BUCKET_NAME: process.env.BUCKET_NAME || NOT_EXISTING_ENV,
+      },
     },
   },
   plugins: ["serverless-plugin-scripts", "serverless-webpack"],
@@ -30,6 +36,7 @@ const config: AWS = {
       },
     },
   },
+  resources,
 };
 
 export = config;
