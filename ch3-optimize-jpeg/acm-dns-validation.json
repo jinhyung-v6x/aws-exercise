@@ -1,0 +1,17 @@
+{
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "_9f9f3dfc0a04a0ffd3ab31df755e0d4c.jinhyung.shop",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "_d473b9945ca5d843aca834200981d281.nbnhgqgzdr.acm-validations.aws."
+          }
+        ]
+      }
+    }
+  ]
+}
